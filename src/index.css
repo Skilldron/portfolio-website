@@ -7,15 +7,27 @@
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
 }
 
 @layer base {
+  h1 {
+    @apply text-8xl;
+    @apply font-bold;
+  }
+
+  p {
+    @apply text-lg;
+    @apply text-muted
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -43,6 +55,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 20 8% 8%;
     --foreground: 0 0% 98%;
@@ -50,10 +63,10 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 217 30% 15%;
+    --primary: 28 100% 50%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 160 84% 39%;
+    --secondary-foreground: #080808;
     --muted: 0 5% 58%;
     --muted-foreground: 0 0% 98%;
     --accent: 240 3.7% 15.9%;
@@ -75,6 +88,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

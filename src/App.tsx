@@ -1,6 +1,7 @@
-import PresentationCard from "@/components/features/presentation_card";
-import CalendarFloatingButton from "@/components/features/calendar_button";
-import { ModeToggle } from "@/components/ui/mode-toggle";
+import PresentationCard from "@features/presentation_card";
+import CalendarFloatingButton from "@features/calendar_button";
+import MainContent from "@features/main_content";
+import { ModeToggle } from "@ui/mode-toggle";
 
 function App() {
   return (
@@ -9,132 +10,8 @@ function App() {
       <ModeToggle />
       <div className="flex flex-col xl:flex-row justify-center gap-20 items-start mx-5 lg:mx-20 xl:mx-0 xl:w-auto">
         <PresentationCard />
-        <div className="max-w-xl text-center self-center">
-          <h1 className="text-6xl">
-            Développeur <span>pationnée</span>
-          </h1>
-          <p>
-            texte employé dans la composition et la mise en page avant
-            impression. Le Lorem Ipsum est le faux texte standard de
-            l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-            assembla ensemble des morceaux de texte pour réaliser un livre
-            spécimen de polices de texte. Il n'a pas fait que survivre cinq
-            siècles, mais s'est aussi adapté à la bureautique informatique, sans
-            que son contenu n'en soit modifié. Il a été popularisé dans les
-            années 1960 grâce à la vente de feuilles Letraset contenant des
-            passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
-            des applications de mise en page de texte, comme Aldus PageMaker.
-            Qu'est-ce que le Lorem Ipsum? Le Lorem Ipsum est simplement du faux
-            texte employé dans la composition et la mise en page avant
-            impression. Le Lorem Ipsum est le faux texte standard de
-            l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-            assembla ensemble des morceaux de texte pour réaliser un livre
-            spécimen de polices de texte. Il n'a pas fait que survivre cinq
-            siècles, mais s'est aussi adapté à la bureautique informatique, sans
-            que son contenu n'en soit modifié. Il a été popularisé dans les
-            années 1960 grâce à la vente de feuilles Letraset contenant des
-            passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
-            des applications de mise en page de texte, comme Aldus
-            PageMaker.Qu'est-ce que le Lorem Ipsum? Le Lorem Ipsum est
-            simplement du faux texte employé dans la composition et la mise en
-            page avant impression. Le Lorem Ipsum est le faux texte standard de
-            l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-            assembla ensemble des morceaux de texte pour réaliser un livre
-            spécimen de polices de texte. Il n'a pas fait que survivre cinq
-            siècles, mais s'est aussi adapté à la bureautique informatique, sans
-            que son contenu n'en soit modifié. Il a été popularisé dans les
-            années 1960 grâce à la vente de feuilles Letraset contenant des
-            passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
-            des applications de mise en page de texte, comme Aldus
-            PageMaker.Qu'est-ce que le Lorem Ipsum? Le Lorem Ipsum est
-            simplement du faux texte employé dans la composition et la mise en
-            page avant impression. Le Lorem Ipsum est le faux texte standard de
-            l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-            assembla ensemble des morceaux de texte pour réaliser un livre
-            spécimen de polices de texte. Il n'a pas fait que survivre cinq
-            siècles, mais s'est aussi adapté à la bureautique informatique, sans
-            que son contenu n'en soit modifié. Il a été popularisé dans les
-            années 1960 grâce à la vente de feuilles Letraset contenant des
-            passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
-            des applications de mise en page de texte, comme Aldus
-            PageMaker.Qu'est-ce que le Lorem Ipsum? Le Lorem Ipsum est
-            simplement du faux texte employé dans la composition et la mise en
-            page avant impression. Le Lorem Ipsum est le faux texte standard de
-            l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-            assembla ensemble des morceaux de texte pour réaliser un livre
-            spécimen de polices de texte. Il n'a pas fait que survivre cinq
-            siècles, mais s'est aussi adapté à la bureautique informatique, sans
-            que son contenu n'en soit modifié. Il a été popularisé dans les
-            années 1960 grâce à la vente de feuilles Letraset contenant des
-            passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
-            des applications de mise en page de texte, comme Aldus
-            PageMaker.Qu'est-ce que le Lorem Ipsum? Le Lorem Ipsum est
-            simplement du faux texte employé dans la composition et la mise en
-            page avant impression. Le Lorem Ipsum est le faux texte standard de
-            l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-            assembla ensemble des morceaux de texte pour réaliser un livre
-            spécimen de polices de texte. Il n'a pas fait que survivre cinq
-            siècles, mais s'est aussi adapté à la bureautique informatique, sans
-            que son contenu n'en soit modifié. Il a été popularisé dans les
-            années 1960 grâce à la vente de feuilles Letraset contenant des
-            passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
-            des applications de mise en page de texte, comme Aldus
-            PageMaker.Qu'est-ce que le Lorem Ipsum? Le Lorem Ipsum est
-            simplement du faux texte employé dans la composition et la mise en
-            page avant impression. Le Lorem Ipsum est le faux texte standard de
-            l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-            assembla ensemble des morceaux de texte pour réaliser un livre
-            spécimen de polices de texte. Il n'a pas fait que survivre cinq
-            siècles, mais s'est aussi adapté à la bureautique informatique, sans
-            que son contenu n'en soit modifié. Il a été popularisé dans les
-            années 1960 grâce à la vente de feuilles Letraset contenant des
-            passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
-            des applications de mise en page de texte, comme Aldus
-            PageMaker.Qu'est-ce que le Lorem Ipsum? Le Lorem Ipsum est
-            simplement du faux texte employé dans la composition et la mise en
-            page avant impression. Le Lorem Ipsum est le faux texte standard de
-            l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-            assembla ensemble des morceaux de texte pour réaliser un livre
-            spécimen de polices de texte. Il n'a pas fait que survivre cinq
-            siècles, mais s'est aussi adapté à la bureautique informatique, sans
-            que son contenu n'en soit modifié. Il a été popularisé dans les
-            années 1960 grâce à la vente de feuilles Letraset contenant des
-            passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
-            des applications de mise en page de texte, comme Aldus
-            PageMaker.Qu'est-ce que le Lorem Ipsum? Le Lorem Ipsum est
-            simplement du faux texte employé dans la composition et la mise en
-            page avant impression. Le Lorem Ipsum est le faux texte standard de
-            l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-            assembla ensemble des morceaux de texte pour réaliser un livre
-            spécimen de polices de texte. Il n'a pas fait que survivre cinq
-            siècles, mais s'est aussi adapté à la bureautique informatique, sans
-            que son contenu n'en soit modifié. Il a été popularisé dans les
-            années 1960 grâce à la vente de feuilles Letraset contenant des
-            passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
-            des applications de mise en page de texte, comme Aldus
-            PageMaker.Qu'est-ce que le Lorem Ipsum? Le Lorem Ipsum est
-            simplement du faux texte employé dans la composition et la mise en
-            page avant impression. Le Lorem Ipsum est le faux texte standard de
-            l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-            assembla ensemble des morceaux de texte pour réaliser un livre
-            spécimen de polices de texte. Il n'a pas fait que survivre cinq
-            siècles, mais s'est aussi adapté à la bureautique informatique, sans
-            que son contenu n'en soit modifié. Il a été popularisé dans les
-            années 1960 grâce à la vente de feuilles Letraset contenant des
-            passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
-            des applications de mise en page de texte, comme Aldus
-            PageMaker.Qu'est-ce que le Lorem Ipsum? Le Lorem Ipsum est
-            simplement du faux texte employé dans la composition et la mise en
-            page avant impression. Le Lorem Ipsum est le faux texte standard de
-            l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-            assembla ensemble des morceaux de texte pour réaliser un livre
-            spécimen de polices de texte. Il n'a pas fait que survivre cinq
-            siècles, mais s'est aussi adapté à la bureautique informatique, sans
-            que son contenu n'en soit modifié. Il a été popularisé dans les
-            années 1960 grâce à la vente de feuilles Letraset contenant des
-            passages du Lorem Ipsum, et, plus récemment, par son inclusion dans
-            des applications de mise en page de texte, comme Aldus PageMaker.
-          </p>
+        <div className="max-w-md xs:max-w-xl md:max-w-2xl text-center xl:text-start self-center">
+          <MainContent />
         </div>
       </div>
     </>

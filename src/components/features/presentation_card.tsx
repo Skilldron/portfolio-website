@@ -1,14 +1,14 @@
 import selfieImgUrl from "@/assets/selfie.jpg";
 import LineFireimgUrl from "@/assets/line_fire.svg";
 import LineimgUrl from "@/assets/line.svg";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Boxes } from "@/components/ui/background-boxes";
 import dailydevImgUrl from "@/assets/dailydev.svg";
+import { AspectRatio } from "@ui/aspect-ratio";
+import { Boxes } from "@ui/background-boxes";
 import { Github, Linkedin } from "lucide-react";
 
 function PresentationCard() {
   return (
-    <div className="flex flex-col items-center justify-center mt-10 xl:m-0 left-0 self-center xl:self-start rounded-lg xl:sticky xl:top-[40px] h-1/3 w-full xl:w-auto xl:max-w-2xl bg-white z-10 relative overflow-hidden">
+    <div className="flex flex-col items-center justify-center mt-10 xl:m-0 left-0 self-center xl:self-start rounded-lg xl:sticky xl:top-[40px] h-1/3 w-full xl:w-auto xl:max-w-2xl bg-black dark:bg-white z-10 relative overflow-hidden">
       <div className="absolute h-[350px] sm:h-96 -top-20 w-full overflow-hidden flex flex-col items-center justify-center rounded-lg">
         <Boxes />
       </div>
@@ -19,7 +19,7 @@ function PresentationCard() {
         src={LineimgUrl}
       />
       <img
-        className="absolute -left-20 bottom-32 w-40 sm:w-52 -z-10"
+        className="absolute -left-24 bottom-36 w-40 sm:w-52 -z-10"
         role="presentation"
         loading="lazy"
         src={LineFireimgUrl}
@@ -37,7 +37,10 @@ function PresentationCard() {
           </AspectRatio>
         </div>
         <div className="flex flex-col items-center text-center flex-nowrap gap-10 xl:gap-20">
-          <h1 className="text-black text-2xl">Harold delory</h1>
+          <div>
+            <h1 className="text-black text-4xl font-bold">Harold delory</h1>
+            <span className="font-bold">Développeur full-stack</span>
+          </div>
           <div className="max-w-80 gap-10 flex flex-col items-center">
             <p>
               Un développeur qui aime découvrir et apprendre de nouvelles choses
