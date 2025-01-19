@@ -1,16 +1,15 @@
 import { Github } from "lucide-react";
-import ExperienceCard from "../ui/experience-card";
+import ExperienceCard from "@ui/experience-card";
 import Section from "@ui/section";
 
-export default function Experiences() {
+export default function Projects() {
   return (
     <Section>
-      <h1 className="pb-20 text-start text-[2.55rem] md:text-[5rem] xl:text-8xl ">
-        Experiences <span className="text-accent">professionnelles</span>
+      <h1 className="pb-20 text-start text-5xl md:text-8xl ">
+        Mes <span className="text-accent">projets</span>
       </h1>
       <div className="flex flex-col gap-3">
         <ExperienceCard
-          key={"mission-1"}
           title="Développeur logiciel"
           type="CDI"
           description="Mission à définir"
@@ -20,7 +19,6 @@ export default function Experiences() {
           missions={[]}
         />
         <ExperienceCard
-          key={"mission-0"}
           title="Développeur logiciel"
           type="Alternance"
           description="En tant qu'alternant, j'intervenais dans le suivi, le développement, le déploiement et la maintenance de projet Odoo, pour des clients en B2B. Je participais également au développement du logiciel propriétaire de TetraUp Madper"

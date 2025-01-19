@@ -5,10 +5,11 @@ import dailydevImgUrl from "@/assets/dailydev.svg";
 import { AspectRatio } from "@ui/aspect-ratio";
 import { Boxes } from "@ui/background-boxes";
 import { Github, Linkedin } from "lucide-react";
+import Section from "@ui/section";
 
 function PresentationCard() {
   return (
-    <div className="flex flex-col items-center justify-center mt-10 xl:m-0 left-0 self-center xl:self-start rounded-lg xl:sticky xl:top-[40px] h-1/3 w-full xl:w-auto xl:max-w-2xl bg-black dark:bg-white z-10 relative overflow-hidden">
+    <Section className="flex flex-col items-center justify-center mt-10 xl:m-0 left-0 self-center xl:self-start rounded-lg xl:sticky xl:top-[40px] h-1/3 w-full xl:w-auto xl:max-w-2xl bg-black dark:bg-white z-10 relative overflow-hidden">
       <div className="absolute h-[350px] sm:h-96 -top-20 w-full overflow-hidden flex flex-col items-center justify-center rounded-lg">
         <Boxes />
       </div>
@@ -54,7 +55,7 @@ function PresentationCard() {
           </div>
         </div>
       </div>
-    </div>
+    </Section>
   );
 }
 
