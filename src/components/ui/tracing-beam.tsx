@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useTheme } from "../theme-provider";
 
 export const TracingBeam = ({
   children,
@@ -15,9 +16,43 @@ export const TracingBeam = ({
     target: ref,
     offset: ["start start", "end start"],
   });
+  const { theme } = useTheme();
 
+  const [colorBeamRoot, setColorBeamRoot] = useState({ bg: "", border: "" });
+  const [colorsTrail, setColorsTrail] = useState({
+    stop1: "",
+    stop2: "",
+    stop3: "",
+    stop4: "",
+  });
   const contentRef = useRef<HTMLDivElement>(null);
   const [svgHeight, setSvgHeight] = useState(0);
+
+  useEffect(() => {
+    if (theme === "light") {
+      setColorBeamRoot({
+        bg: "hsl(var(--button))",
+        border: "hsl(var(--foreground))",
+      });
+      setColorsTrail({
+        stop1: "hsl(var(--background))",
+        stop2: "hsl(var(--button))",
+        stop3: "hsl(var(--foreground))",
+        stop4: "hsl(var(--foreground))",
+      });
+    } else {
+      setColorBeamRoot({
+        bg: "var(--emerald-500)",
+        border: "var(--emerald-600)",
+      });
+      setColorsTrail({
+        stop1: "#fe8c00",
+        stop2: "#fe8c00",
+        stop3: "#b64b2e",
+        stop4: "#f83600",
+      });
+    }
+  }, [theme]);
 
   useEffect(() => {
     if (contentRef.current) {
@@ -30,14 +65,14 @@ export const TracingBeam = ({
     {
       stiffness: 500,
       damping: 90,
-    },
+    }
   );
   const y2 = useSpring(
     useTransform(scrollYProgress, [0, 1], [50, svgHeight + 150]),
     {
       stiffness: 500,
       damping: 90,
-    },
+    }
   );
 
   return (
@@ -66,9 +101,9 @@ export const TracingBeam = ({
             }}
             animate={{
               backgroundColor:
-                scrollYProgress.get() > 0 ? "white" : "var(--emerald-500)",
+                scrollYProgress.get() > 0 ? "white" : colorBeamRoot.bg,
               borderColor:
-                scrollYProgress.get() > 0 ? "white" : "var(--emerald-600)",
+                scrollYProgress.get() > 0 ? "white" : colorBeamRoot.border,
             }}
             className="h-2 w-2  rounded-full border border-neutral-300 bg-white"
           />
@@ -108,10 +143,14 @@ export const TracingBeam = ({
               y1={y1} // set y1 for gradient
               y2={y2} // set y2 for gradient
             >
-              <stop stopColor="#fe8c00" stopOpacity="0"></stop>
-              <stop stopColor="#fe8c00"></stop>
-              <stop offset="0.325" stopColor="#b64b2e"></stop>
-              <stop offset="1" stopColor="#f83600" stopOpacity="0"></stop>
+              <stop stopColor={colorsTrail.stop1} stopOpacity="0"></stop>
+              <stop stopColor={colorsTrail.stop2}></stop>
+              <stop offset="0.325" stopColor={colorsTrail.stop3}></stop>
+              <stop
+                offset="1"
+                stopColor={colorsTrail.stop4}
+                stopOpacity="0"
+              ></stop>
             </motion.linearGradient>
           </defs>
         </svg>

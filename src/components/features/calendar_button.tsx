@@ -15,7 +15,7 @@ function CalendarFloatingButton() {
 
   return (
     <button
-      className="fixed bg-primary rounded-full p-3 md:p-5 2xl:p-7 flex justify-center align-middle bottom-5 z-50 right-5"
+      className="fixed bg-primary text-primary-foreground rounded-full p-3 md:p-5 2xl:p-7 flex justify-center align-middle bottom-5 z-50 right-5"
       data-cal-namespace="standart-meeting"
       data-cal-link="harold/standart-meeting"
       data-cal-origin="https://cal.harold-delory.fr"
@@ -40,7 +40,7 @@ export const BookingButton = React.forwardRef<
     data-cal-origin="https://cal.harold-delory.fr"
     data-cal-config='{"layout":"month_view"}'
     ref={ref}
-    className="bg-primary relative block w-full rounded-md h-10 font-medium"
+    className="bg-button relative block w-full rounded-md h-10 font-medium"
     type="submit"
   >
     {children}

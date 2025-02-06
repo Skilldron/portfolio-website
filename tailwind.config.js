@@ -26,6 +26,9 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        outlet: {
+          DEFAULT: "hsl(var(--outlet))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -52,6 +55,10 @@ export default {
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
+        button: {
+          DEFAULT : "hsl(var(--button))",
+          foreground: "hsl(var(--button-foreground))",
+        },
         ring: "hsl(var(--ring))",
       },
     },

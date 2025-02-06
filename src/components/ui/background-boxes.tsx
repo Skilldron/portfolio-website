@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
   const rows = new Array(150).fill(1);
   const cols = new Array(100).fill(1);
-  const colors = ["--emerald-500"];
+  const colors = ["--secondary"];
   const getRandomColor = () => {
     return colors[Math.floor(Math.random() * colors.length)];
   };
@@ -25,19 +25,19 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
       {rows.map((_, i) => (
         <motion.div
           key={`row` + i}
-          className="w-16 h-8 border-l border-slate-700 relative"
+          className="w-16 h-8 border-l border-outlet dark:border-slate-700 relative"
         >
           {cols.map((_, j) => (
             <motion.div
               whileHover={{
-                backgroundColor: `var(${getRandomColor()})`,
+                backgroundColor: `hsl(var(${getRandomColor()}))`,
                 transition: { duration: 0 },
               }}
               animate={{
                 transition: { duration: 2 },
               }}
               key={`col` + j}
-              className="w-16 h-8 border-r border-t border-slate-300 relative"
+              className="w-16 h-8 border-r border-t border-outlet dark:border-slate-300 relative"
             ></motion.div>
           ))}
         </motion.div>

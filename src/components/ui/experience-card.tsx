@@ -18,11 +18,13 @@ import {
 } from "@ui/dialog";
 import { useMediaQuery } from "usehooks-ts";
 import { Separator } from "./separator";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useTheme } from "../theme-provider";
 
 export default function ExperienceCard({
   title,
   type = "CDI",
+  company,
   description,
   date_start,
   date_end,
@@ -31,11 +33,12 @@ export default function ExperienceCard({
 }: {
   title: string;
   type: "CDI" | "Alternance";
+  company: string;
   description: string;
   date_start: string;
   date_end: string;
-  missions: Array<string>;
-  icons: Array<JSX.Element>;
+  missions: string[];
+  icons: JSX.Element[];
 }) {
   const is_computer = useMediaQuery("(min-width: 768px)");
 
@@ -45,6 +48,7 @@ export default function ExperienceCard({
         <DialogTrigger>
           <Card
             title={title}
+            company={company}
             type={type}
             description={description}
             date_start={date_start}
@@ -60,10 +64,16 @@ export default function ExperienceCard({
               </span>
             </DialogTitle>
             <DialogDescription>{description}</DialogDescription>
-            <div className="flex flex-row gap-5 pt-3">
-              {icons.map((element, index) =>
-                React.cloneElement(element, { key: `icon-${title}-${index}` }),
-              )}
+            <div className="flex flex-row flex-wrap gap-5 pt-3">
+              {icons.map((element, index) => (
+                <div
+                  className="flex flex-col items-center"
+                  key={`${element.props.textRendering}-${index}`}
+                >
+                  {element}
+                  <p>{element.props.textRendering}</p>
+                </div>
+              ))}
             </div>
           </DialogHeader>
           <Separator />
@@ -87,6 +97,7 @@ export default function ExperienceCard({
         <Card
           title={title}
           type={type}
+          company={company}
           description={description}
           date_start={date_start}
           date_end={date_end}
@@ -94,9 +105,40 @@ export default function ExperienceCard({
       </DrawerTrigger>
       <DrawerContent className="min-h-[70svh]">
         <DrawerHeader>
-          <DrawerTitle>{title}</DrawerTitle>
-          <DrawerDescription>{description}</DrawerDescription>
+          <DrawerTitle className="text-2xl">{title}</DrawerTitle>
+          <DrawerDescription className="text-muted">
+            {description}
+          </DrawerDescription>
         </DrawerHeader>
+        <Separator />
+        <div className="flex flex-col gap-10 p-10">
+          <div>
+            <h2>Stack technique</h2>
+            <div className="flex flex-row flex-wrap gap-5 pt-3">
+              {icons.map((element, index) => (
+                <div
+                  className="flex flex-col items-center"
+                  key={`${element.props.textRendering}-${index}`}
+                >
+                  {element}
+                  <p>{element.props.textRendering}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="mb-10">Mes missions</h2>
+            <ul className="list-disc list-inside">
+              {missions.map((value, index) => {
+                return (
+                  <li className="pb-1" key={`mission-${index}`}>
+                    {value}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
       </DrawerContent>
     </Drawer>
   );
@@ -105,29 +147,51 @@ export default function ExperienceCard({
 function Card({
   title,
   type = "CDI",
+  company,
   description,
   date_start,
   date_end,
 }: {
   title: string;
   type: "CDI" | "Alternance";
+  company: string;
   description: string;
   date_start: string;
   date_end: string;
 }) {
+  const { theme } = useTheme();
+  const [hoverColor, setHoverColor] = useState({ initial: "", hover: "" });
+
+  useEffect(() => {
+    if (theme === "light") {
+      setHoverColor({
+        initial: "hsl(var(--background))",
+        hover: "rgb(240, 235, 230)",
+      });
+    } else {
+      setHoverColor({
+        initial: "hsl(var(--background))",
+        hover: "rgb(60, 57, 58, 0.6)",
+      });
+    }
+  }, [theme]);
+
   return (
     <motion.div
-      initial={{ backgroundColor: "rgba(60, 57, 58, 0)" }}
+      initial={{ backgroundColor: hoverColor.initial }}
       whileHover={{
-        backgroundColor: "rgb(60, 57, 58, 0.6)",
+        backgroundColor: hoverColor.hover,
         scale: 1.02,
       }}
       transition={{ duration: 0.4 }}
       className="flex flex-col w-full gap-5 p-5 rounded-md text-start"
     >
-      <h2>
-        {title} - <span className="text-base text-secondary">{type}</span>
-      </h2>
+      <div>
+        <h2>
+          {title} - <span className="text-base text-secondary">{type}</span>
+        </h2>
+        <h3>{company}</h3>
+      </div>
       <p className="text-base w-10/12">{description}</p>
       <div className="flex justify-between">
         <p>
