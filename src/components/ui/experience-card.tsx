@@ -18,7 +18,7 @@ import {
 } from "@ui/dialog";
 import { useMediaQuery } from "usehooks-ts";
 import { Separator } from "./separator";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "../theme-provider";
 
 export default function ExperienceCard({
