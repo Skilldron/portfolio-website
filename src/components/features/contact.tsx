@@ -136,7 +136,7 @@ export default function Contact() {
                   <Label htmlFor="notes">Notes</Label>
                   <TextArea
                     id="notes"
-                    placeholder="Indiquez tout autres informations.."
+                    placeholder="Indiquez toutes autres informations.."
                     name="message"
                   />
                 </LabelInputContainer>

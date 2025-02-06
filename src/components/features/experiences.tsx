@@ -15,7 +15,7 @@ export default function Experiences() {
           title="Développeur web"
           company="OpenItech"
           type="CDI"
-          description="Intégrer l'équipe de développement d'OpenItech, mon rôle est de participer au développement de l'outil de son principale client Avosdim. J'interviens également le processus complet de création d'applications webs principalement développé en React."
+          description="En intégrant l'équipe de développement d'OpenItech, mon rôle est de participer au développement de l'outil de son principal client Avosdim. J'interviens également dans le processus complet de création d'applications webs, principalement développées en React."
           date_start="Janvier 2025"
           date_end="Aujourd'hui"
           icons={[
@@ -40,7 +40,7 @@ export default function Experiences() {
           title="Développeur logiciel"
           type="Alternance"
           company="Tetra Up"
-          description="En tant qu'alternant, j'intervenais dans le suivi, le développement, le déploiement et la maintenance de projet Odoo, pour des clients en B2B. Je participais également au développement du logiciel propriétaire de TetraUp : Madper"
+          description="En tant qu'alternant, j'intervenais dans le suivi, le développement, le déploiement et la maintenance de projets Odoo, pour des clients en B2B. Je participais également au développement du logiciel propriétaire de TetraUp : Madper"
           date_start="Août 2022"
           date_end="Août 2024"
           icons={[
